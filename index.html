@@ -1,912 +1,1240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" translate="no">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+
 <title>T1D Match | Same Journey. Brighter Together.</title>
 
 <style>
+:root{
+  --navy:#123665;
+  --blue:#21a8ee;
+  --pink:#f21682;
+  --purple:#7b4df6;
+  --green:#1cc899;
+  --text:#173a65;
+  --muted:#66798f;
+}
+
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
+
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
-  color:#12365f;
+  color:var(--text);
   background:#fff;
 }
-a{text-decoration:none;color:inherit}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
 .container{
   max-width:1180px;
   margin:auto;
-  padding:0 28px;
+  padding:0 24px;
 }
 
 /* HEADER */
+
 header{
-  background:#fff;
   position:sticky;
   top:0;
-  z-index:20;
-  border-bottom:1px solid #e9eef4;
+  z-index:50;
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid #e9eef5;
   box-shadow:0 2px 12px rgba(20,50,90,.06);
 }
+
 .nav{
   height:76px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:22px;
+  gap:20px;
 }
+
 .logo{
   display:flex;
   align-items:center;
   gap:9px;
   font-size:23px;
   font-weight:900;
+  color:var(--navy);
 }
-.logo-heart{
-  width:39px;
-  height:39px;
+
+.logo-mark{
+  width:38px;
+  height:38px;
   border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--pink));
   display:grid;
   place-items:center;
   color:#fff;
-  font-size:22px;
-  background:linear-gradient(135deg,#16a8e6,#f21682);
+  font-size:20px;
 }
+
 .logo small{
   display:block;
   font-size:10px;
-  color:#4597c8;
+  color:#4f9bd1;
   margin-top:-2px;
 }
+
 .menu{
   display:flex;
-  gap:25px;
+  gap:22px;
   font-size:13px;
   font-weight:700;
   color:#31527a;
 }
+
 .actions{
   display:flex;
-  gap:9px;
+  gap:10px;
 }
+
 .btn{
-  display:inline-block;
-  padding:11px 21px;
+  padding:11px 20px;
   border-radius:999px;
-  border:1px solid #cbd8e6;
+  border:1px solid #cfdbea;
   font-weight:800;
   font-size:14px;
 }
-.btn-pink{
-  border:0;
+
+.btn-primary{
+  background:linear-gradient(90deg,var(--pink),#ff4b9e);
   color:#fff;
-  background:linear-gradient(90deg,#f21682,#ff4a9d);
-  box-shadow:0 8px 20px rgba(242,22,130,.22);
+  border:0;
+  box-shadow:0 8px 20px rgba(242,22,130,.2);
 }
 
 /* HERO */
+
 .hero{
-  background:
-    radial-gradient(circle at 55% 30%,rgba(255,207,124,.65),transparent 30%),
-    linear-gradient(120deg,#fff5f7 0%,#fff2df 46%,#dff4ff 100%);
-  padding:35px 0 0;
+  background:linear-gradient(
+    180deg,
+    #fff3df 0%,
+    #ffe6cf 52%,
+    #ffd9d2 100%
+  );
+  padding:34px 0 0;
 }
+
 .hero-grid{
   display:grid;
-  grid-template-columns:1fr 1.05fr .88fr;
-  gap:25px;
-  min-height:555px;
+  grid-template-columns:.95fr 1.08fr .92fr;
+  gap:24px;
   align-items:stretch;
 }
 
 .hero-copy{
-  padding:45px 0 30px;
+  padding:38px 0 28px;
 }
+
 .hero-copy h1{
-  margin:0 0 18px;
   font-size:58px;
-  line-height:.91;
+  line-height:.9;
+  margin:0 0 18px;
   letter-spacing:-2px;
 }
-.love{color:#f21682}
-.t1d{color:#16a8e6}
+
+.love{
+  color:var(--pink);
+}
+
+.t1d{
+  color:var(--blue);
+}
 
 .hero-copy>p{
   font-size:17px;
   line-height:1.55;
+  color:#2c5079;
   max-width:390px;
-  color:#31577f;
 }
 
 .benefit{
   display:flex;
   gap:12px;
-  margin:17px 0;
+  margin:15px 0;
   align-items:flex-start;
 }
-.bicon{
-  width:37px;
-  height:37px;
-  flex:0 0 auto;
+
+.benefit .ic{
+  width:38px;
+  height:38px;
+  border-radius:11px;
   display:grid;
   place-items:center;
-  border-radius:12px;
   color:#fff;
+  flex:0 0 auto;
   font-size:18px;
 }
-.b1{background:#f21682}
-.b2{background:#21a9ee}
-.b3{background:#20c994}
+
+.benefit:nth-of-type(1) .ic{
+  background:var(--pink);
+}
+
+.benefit:nth-of-type(2) .ic{
+  background:var(--blue);
+}
+
+.benefit:nth-of-type(3) .ic{
+  background:var(--green);
+}
+
 .benefit b{
   display:block;
   font-size:14px;
-  margin-bottom:2px;
-}
-.benefit span{
-  font-size:12px;
-  color:#56718f;
 }
 
-/* COUPLE ILLUSTRATION */
-.couple{
-  min-height:520px;
-  position:relative;
-  overflow:hidden;
+.benefit span{
+  font-size:12px;
+  color:#55708f;
+}
+
+/* COUPLE PHOTO */
+
+.hero-photo{
+  min-height:500px;
   align-self:end;
-  border-radius:30px 30px 0 0;
-  background:
-    radial-gradient(circle at 50% 25%,#fff8bc 0,#ffd687 18%,transparent 42%),
-    linear-gradient(#ffcaa9 0%,#ffb99b 43%,#65b5d2 44%,#348eaf 100%);
-  box-shadow:0 14px 34px rgba(26,66,108,.15);
+  border-radius:28px 28px 0 0;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 14px 35px rgba(24,63,104,.15);
+  background:#ffeede;
 }
-.sun{
+
+.hero-photo img{
   position:absolute;
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  background:rgba(255,245,176,.65);
-  left:50%;
-  top:70px;
-  transform:translateX(-50%);
-  filter:blur(2px);
+  height:100%;
+  width:155%;
+  max-width:none;
+  object-fit:cover;
+  left:-28%;
+  top:0;
 }
-.person{
-  position:absolute;
-  bottom:0;
-}
-.woman{
-  left:11%;
-  width:54%;
-  height:77%;
-}
-.man{
-  right:3%;
-  width:53%;
-  height:78%;
-}
-.head{
-  position:absolute;
-  width:145px;
-  height:175px;
-  border-radius:48% 48% 46% 46%;
-  background:#efb18f;
-  left:50%;
-  transform:translateX(-50%);
-  top:25px;
-}
-.man .head{background:#c98461}
-.hair{
-  position:absolute;
-  width:165px;
-  height:160px;
-  border-radius:55% 55% 40% 40%;
-  background:#56342b;
-  left:50%;
-  transform:translateX(-50%);
-  top:5px;
-}
-.man .hair{background:#493029;height:115px}
-.face{
-  position:absolute;
-  width:132px;
-  height:150px;
-  border-radius:48%;
-  background:#efb18f;
-  left:50%;
-  transform:translateX(-50%);
-  top:38px;
-}
-.man .face{background:#c98461}
-.body{
-  position:absolute;
-  width:100%;
-  height:57%;
-  bottom:0;
-  border-radius:45% 45% 0 0;
-  background:#fff2e9;
-}
-.man .body{background:#173e65}
-.eye{
-  position:absolute;
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:#2d2727;
-  top:94px;
-}
-.e1{left:43%}
-.e2{right:43%}
-.smile{
-  position:absolute;
-  width:45px;
-  height:20px;
-  border-bottom:5px solid #9f4a4e;
-  border-radius:50%;
-  top:125px;
-  left:50%;
-  transform:translateX(-50%);
-}
-.sensor{
-  position:absolute;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:#fff;
-  border:5px solid #e5e5e5;
-  bottom:135px;
-  left:27px;
-}
-.sensor:after{
-  content:"";
-  position:absolute;
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  background:#82c8e8;
-  top:7px;
-  left:7px;
-}
-.couple-note{
+
+.note{
   position:absolute;
   left:20px;
-  bottom:22px;
-  padding:9px 13px;
-  border-radius:15px;
-  background:rgba(255,255,255,.78);
+  bottom:18px;
   font-family:cursive;
-  font-size:23px;
-  color:#214e7a;
+  font-size:25px;
+  color:#214d7d;
   transform:rotate(-7deg);
+  text-shadow:0 1px 0 #fff;
 }
 
 /* SIGNUP */
+
 .signup{
   background:#fff;
-  align-self:start;
-  margin-top:14px;
   border-radius:22px;
-  padding:23px;
-  box-shadow:0 16px 38px rgba(25,64,105,.18);
+  padding:22px;
+  margin:12px 0 28px;
+  box-shadow:0 16px 38px rgba(24,63,104,.18);
+  align-self:start;
 }
+
 .signup h2{
   margin:0;
   text-align:center;
   font-size:23px;
 }
+
 .signup>p{
   text-align:center;
   font-size:12px;
-  color:#6c7b8f;
-  margin:5px 0 16px;
+  color:var(--muted);
+  margin:4px 0 15px;
 }
+
 .field{
   display:flex;
-  gap:9px;
   align-items:center;
+  gap:9px;
+  border:1px solid #dce5ef;
+  border-radius:9px;
   padding:10px 12px;
   margin-bottom:9px;
-  border:1px solid #dce4ed;
-  border-radius:9px;
 }
+
 .field input,
 .field select{
   width:100%;
   border:0;
   outline:0;
   background:transparent;
-  color:#53677f;
   font-size:13px;
+  color:#42526a;
 }
+
 .signup button{
   width:100%;
   border:0;
-  padding:13px;
   border-radius:999px;
+  padding:13px;
+  background:linear-gradient(90deg,var(--pink),#ff4399);
   color:#fff;
   font-weight:900;
   font-size:15px;
   cursor:pointer;
-  background:linear-gradient(90deg,#f21682,#ff4499);
 }
+
+.signup button:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+}
+
 .terms{
   font-size:9px!important;
-  color:#8c98a7!important;
-  margin-top:9px!important;
+  color:#8b97a7!important;
 }
 
 /* FEATURE CARDS */
+
 .features{
-  padding:20px 0 32px;
+  padding:18px 0 30px;
 }
+
 .feature-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:14px;
 }
+
 .feature{
   text-align:center;
-  padding:21px 17px;
-  min-height:140px;
-  border-radius:17px;
+  border-radius:16px;
+  padding:20px 16px;
+  min-height:135px;
 }
-.feature:nth-child(1){background:#ffeaf5}
-.feature:nth-child(2){background:#eaf7ff}
-.feature:nth-child(3){background:#eafff4}
-.feature:nth-child(4){background:#f3ecff}
-.feature .icon{
+
+.feature:nth-child(1){
+  background:#ffe9f5;
+}
+
+.feature:nth-child(2){
+  background:#eaf7ff;
+}
+
+.feature:nth-child(3){
+  background:#eafff3;
+}
+
+.feature:nth-child(4){
+  background:#f2ebff;
+}
+
+.feature .ic{
   font-size:30px;
 }
+
 .feature b{
   display:block;
   margin:8px 0 5px;
   font-size:14px;
 }
+
 .feature span{
   font-size:11px;
+  color:#617188;
   line-height:1.45;
-  color:#627188;
 }
 
 /* SECTIONS */
+
 .section{
-  padding:58px 0;
+  padding:54px 0;
 }
+
 .section-title{
   text-align:center;
   font-size:36px;
   margin:0;
-}
-.section-sub{
-  text-align:center;
-  color:#60748e;
-  margin:7px auto 30px;
-  max-width:650px;
+  color:var(--navy);
 }
 
-.steps{
+.section-sub{
+  text-align:center;
+  color:#5e7390;
+  margin:7px 0 28px;
+}
+
+.story-grid,
+.how-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
 }
+
+.story,
 .step{
-  text-align:center;
-  padding:28px 22px;
-  border:1px solid #e5edf5;
-  border-radius:19px;
-  background:linear-gradient(145deg,#f7fbff,#fff);
-}
-.number{
-  width:45px;
-  height:45px;
-  margin:auto;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:#fff;
-  font-weight:900;
-  background:linear-gradient(135deg,#18a8e5,#8052f4);
+  border:1px solid #e7edf4;
+  border-radius:18px;
+  padding:22px;
+  background:#fff;
+  box-shadow:0 10px 25px rgba(36,67,105,.07);
 }
 
-/* WHY */
-.why{
-  padding:50px 0;
-  background:linear-gradient(180deg,#edf8ff,#fff);
+.story p,
+.step p{
+  font-size:13px;
+  color:#617188;
 }
+
+.step{
+  text-align:center;
+  background:linear-gradient(145deg,#f7fbff,#fff);
+}
+
+.num{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  margin:auto;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+}
+
+/* WHY T1D MATCH */
+
+.why{
+  background:linear-gradient(180deg,#eef9ff,#fff);
+  padding:45px 0;
+}
+
 .why-grid{
   display:grid;
-  grid-template-columns:1.05fr 1.35fr;
-  gap:35px;
+  grid-template-columns:1.05fr 1.4fr;
+  gap:32px;
   align-items:center;
 }
-.heart-scene{
-  height:330px;
-  border-radius:25px;
-  position:relative;
+
+.hands{
+  min-height:330px;
+  border-radius:24px;
   overflow:hidden;
-  background:
-    radial-gradient(circle at 50% 30%,#fff4b2 0,#ffc58c 23%,transparent 45%),
-    linear-gradient(#ffd2ae 0%,#ffc09d 45%,#67b5d2 46%,#3d94b5 100%);
+  position:relative;
+  box-shadow:0 12px 28px rgba(24,63,104,.12);
+  background:#eef8ff;
 }
-.hand{
+
+.hands img{
   position:absolute;
-  width:170px;
-  height:70px;
-  background:#e6a17e;
-  border-radius:60px;
-  top:145px;
+  inset:0;
+  width:145%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  left:-4%;
 }
-.left-hand{
-  left:60px;
-  transform:rotate(38deg);
-}
-.right-hand{
-  right:60px;
-  transform:rotate(-38deg);
-}
-.heart-symbol{
-  position:absolute;
-  font-size:120px;
-  color:#fff;
-  left:50%;
-  top:70px;
-  transform:translateX(-50%);
-  opacity:.9;
-}
-.stronger{
+
+.script{
   position:absolute;
   left:24px;
-  top:25px;
+  top:28px;
   font-family:cursive;
-  font-size:28px;
-  color:#1f507f;
+  font-size:29px;
+  color:#204f80;
   transform:rotate(-7deg);
 }
 
 .why-icons{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:15px;
+  gap:14px;
   text-align:center;
-  margin-top:27px;
+  margin-top:28px;
 }
-.why-item .icon{font-size:29px}
+
+.why-item .ic{
+  font-size:29px;
+}
+
 .why-item b{
   display:block;
   font-size:12px;
-  margin:6px 0;
-}
-.why-item span{
-  font-size:10px;
-  color:#6d798a;
+  margin:5px 0;
 }
 
-/* STORIES */
-.stories{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+.why-item span{
+  font-size:10px;
+  color:#6a788c;
 }
-.story{
-  padding:24px;
-  border:1px solid #e7edf4;
-  border-radius:19px;
-  box-shadow:0 10px 25px rgba(30,70,110,.07);
-}
-.story b{
+
+.join-today{
   display:block;
-  margin-bottom:8px;
-}
-.story p{
-  margin:0;
-  color:#627188;
-  font-size:13px;
-  line-height:1.5;
+  width:max-content;
+  margin:28px auto 0;
+  padding:12px 28px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--pink),#ff4b9d);
+  color:#fff;
+  font-weight:900;
 }
 
 /* FAQ */
+
 .faq{
-  max-width:850px;
+  max-width:860px;
   margin:auto;
 }
+
 details{
-  padding:15px 17px;
-  margin:10px 0;
-  border:1px solid #e3eaf2;
+  border:1px solid #e5ebf2;
   border-radius:14px;
+  padding:14px 16px;
+  margin:10px 0;
+  background:#fff;
 }
+
 summary{
-  cursor:pointer;
   font-weight:800;
+  cursor:pointer;
 }
+
 details p{
-  color:#627188;
   font-size:13px;
+  color:#617188;
 }
 
 /* FOOTER */
+
 footer{
-  border-top:1px solid #e8edf3;
-  padding:22px 0;
-}
-.footer{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  color:#718096;
-  font-size:11px;
+  padding:20px 0;
+  border-top:1px solid #e9eef4;
+  background:#fff;
 }
 
+.foot{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  font-size:10px;
+  color:#718096;
+}
+
+.status{
+  display:none;
+  margin:12px 0 0;
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:12px;
+  text-align:center;
+}
+
+.status.ok{
+  display:block;
+  background:#eafff3;
+  color:#117a56;
+}
+
+.status.err{
+  display:block;
+  background:#fff0f2;
+  color:#a6203c;
+}
+
+/* MOBILE */
+
 @media(max-width:900px){
-  .menu{display:none}
-  .hero-grid{grid-template-columns:1fr}
-  .couple{min-height:480px;border-radius:25px}
-  .signup{margin:0 0 30px}
-  .feature-grid{grid-template-columns:1fr 1fr}
-  .steps,.stories{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr}
-  .why-icons{grid-template-columns:1fr 1fr}
+
+  .menu{
+    display:none;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-photo{
+    min-height:430px;
+    border-radius:24px;
+  }
+
+  .feature-grid,
+  .story-grid,
+  .how-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .why-icons{
+    grid-template-columns:1fr 1fr;
+  }
 }
 
 @media(max-width:560px){
-  .container{padding:0 16px}
-  h1{font-size:48px}
-  .feature-grid{grid-template-columns:1fr}
-  .actions .btn:first-child{display:none}
+
+  .container{
+    padding:0 16px;
+  }
+
+  .hero-copy h1{
+    font-size:48px;
+  }
+
+  .feature-grid,
+  .story-grid,
+  .how-grid{
+    grid-template-columns:1fr;
+  }
+
+  .actions .btn:first-child{
+    display:none;
+  }
+
+  .hero-photo{
+    min-height:390px;
+  }
+
+  .foot{
+    flex-direction:column;
+    text-align:center;
+  }
 }
 </style>
 </head>
 
-<body>
+<body class="notranslate" translate="no">
 
 <header>
-<div class="container nav">
-  <a href="#home" class="logo">
-    <span class="logo-heart">♥</span>
-    <span>
-      T1D Match
-      <small>Same Journey. Brighter Together.</small>
-    </span>
-  </a>
+  <div class="container nav">
 
-  <nav class="menu">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#stories">Success Stories</a>
-    <a href="#how">How It Works</a>
-    <a href="#faq">FAQ</a>
-  </nav>
+    <a class="logo" href="#home">
+      <span class="logo-mark">♥</span>
 
-  <div class="actions">
-    <a class="btn" href="#join">Log In</a>
-    <a class="btn btn-pink" href="#join">Join Now</a>
+      <span>
+        T1D Match
+        <small>Same Journey. Brighter Together.</small>
+      </span>
+    </a>
+
+    <nav class="menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#stories">Success Stories</a>
+      <a href="#how">How It Works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="actions">
+      <a class="btn" href="#join">Log In</a>
+      <a class="btn btn-primary" href="#join">Join Now</a>
+    </div>
+
   </div>
-</div>
 </header>
 
-<main>
-
 <section class="hero" id="home">
-<div class="container hero-grid">
 
-  <div class="hero-copy">
-    <h1>
-      <span class="love">Love</span><br>
-      Understands<br>
-      <span class="t1d">T1D</span>
-    </h1>
+  <div class="container hero-grid">
 
-    <p>
-      A dating community for people with Type 1 Diabetes who get it.
-    </p>
+    <div class="hero-copy">
 
-    <div class="benefit">
-      <div class="bicon b1">♥</div>
-      <div>
-        <b>Real Connections</b>
-        <span>Meet people who understand your daily life.</span>
-      </div>
-    </div>
+      <h1>
+        <span class="love">Love</span><br>
+        Understands<br>
+        <span class="t1d">T1D</span>
+      </h1>
 
-    <div class="benefit">
-      <div class="bicon b2">👥</div>
-      <div>
-        <b>A Supportive Community</b>
-        <span>More than dating — real friendship and support.</span>
-      </div>
-    </div>
-
-    <div class="benefit">
-      <div class="bicon b3">✓</div>
-      <div>
-        <b>Safe & Private</b>
-        <span>Your health, your story, your control.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="couple">
-    <div class="sun"></div>
-
-    <div class="person woman">
-      <div class="hair"></div>
-      <div class="face">
-        <span class="eye e1"></span>
-        <span class="eye e2"></span>
-        <span class="smile"></span>
-      </div>
-      <div class="body"></div>
-      <div class="sensor"></div>
-    </div>
-
-    <div class="person man">
-      <div class="hair"></div>
-      <div class="face">
-        <span class="eye e1"></span>
-        <span class="eye e2"></span>
-        <span class="smile"></span>
-      </div>
-      <div class="body"></div>
-    </div>
-
-    <div class="couple-note">
-      Same Journey<br>
-      Brighter Together ♥
-    </div>
-  </div>
-
-  <div class="signup" id="join">
-    <h2>Create Your Free Account</h2>
-    <p>Find someone who understands your T1D journey.</p>
-
-    <form id="signupForm">
-
-      <div class="field">
-        <span>👤</span>
-        <input type="text" placeholder="Full Name" required>
-      </div>
-
-      <div class="field">
-        <span>✉</span>
-        <input type="email" placeholder="Email Address" required>
-      </div>
-
-      <div class="field">
-        <span>🔒</span>
-        <input type="password" placeholder="Create Password" required>
-      </div>
-
-      <div class="field">
-        <span>📅</span>
-        <input type="date" required>
-      </div>
-
-      <div class="field">
-        <span>📍</span>
-        <select required>
-          <option value="">Location</option>
-          <option>United States</option>
-          <option>Canada</option>
-          <option>United Kingdom</option>
-          <option>Israel</option>
-          <option>Australia</option>
-          <option>Other</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <span>♥</span>
-        <select required>
-          <option value="">I am looking for</option>
-          <option>Women</option>
-          <option>Men</option>
-          <option>Everyone</option>
-        </select>
-      </div>
-
-      <button type="submit">Join T1D Match →</button>
-
-      <p class="terms">
-        By creating an account you agree to our Terms of Service
-        and Privacy Policy.
+      <p>
+        A dating community for people with Type 1 Diabetes who get it.
       </p>
 
-    </form>
+      <div class="benefit">
+        <div class="ic">♥</div>
+
+        <div>
+          <b>Real Connections</b>
+          <span>Meet people who understand your daily life.</span>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="ic">👥</div>
+
+        <div>
+          <b>A Supportive Community</b>
+          <span>More than dating — real friendship and support.</span>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="ic">✓</div>
+
+        <div>
+          <b>Safe & Private</b>
+          <span>Your health, your story, your control.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero-photo">
+
+      <img
+        src="data:image/webp;base64,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"
+        alt="Smiling couple at sunset"
+      >
+
+      <div class="note">
+        Same Journey<br>
+        Brighter Together ♥
+      </div>
+
+    </div>
+
+    <div class="signup" id="join">
+
+      <h2>Create Your Free Account</h2>
+
+      <p>
+        Find someone who understands your T1D journey.
+      </p>
+
+      <form id="signupForm">
+
+        <div class="field">
+          <span>👤</span>
+          <input id="fullName" type="text" placeholder="Full Name" required>
+        </div>
+
+        <div class="field">
+          <span>✉</span>
+          <input id="email" type="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="field">
+          <span>🔒</span>
+          <input id="password" type="password" placeholder="Create Password" minlength="6" required>
+        </div>
+
+        <div class="field">
+          <span>📅</span>
+          <input id="dob" type="date" required>
+        </div>
+
+        <div class="field">
+          <span>📍</span>
+
+          <select id="location" required>
+            <option value="">Location</option>
+            <option>Israel</option>
+            <option>United States</option>
+            <option>United Kingdom</option>
+            <option>Canada</option>
+            <option>Australia</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <span>♥</span>
+
+          <select id="lookingFor" required>
+            <option value="">I am looking for</option>
+            <option>Women</option>
+            <option>Men</option>
+            <option>Everyone</option>
+          </select>
+        </div>
+
+        <button id="joinButton" type="submit">
+          Join T1D Match →
+        </button>
+
+        <div id="formStatus" class="status"></div>
+
+        <p class="terms">
+          By creating an account you agree to our Terms of Service and Privacy Policy.
+          Password is not stored in the public users table.
+        </p>
+
+      </form>
+
+    </div>
+
   </div>
 
-</div>
 </section>
-
 
 <section class="features" id="about">
-<div class="container feature-grid">
 
-  <div class="feature">
-    <div class="icon">💕</div>
-    <b>People Like You</b>
-    <span>A community of individuals living with Type 1 Diabetes.</span>
+  <div class="container feature-grid">
+
+    <div class="feature">
+      <div class="ic">💕</div>
+      <b>People Like You</b>
+      <span>A community of individuals living with Type 1 Diabetes.</span>
+    </div>
+
+    <div class="feature">
+      <div class="ic">🤝</div>
+      <b>Meaningful Connections</b>
+      <span>Find friendship, romance and support.</span>
+    </div>
+
+    <div class="feature">
+      <div class="ic">🌱</div>
+      <b>A Healthier, Happier You</b>
+      <span>Share experiences and live life to the fullest.</span>
+    </div>
+
+    <div class="feature">
+      <div class="ic">💬</div>
+      <b>Real Conversations</b>
+      <span>Talk openly about life with T1D without explaining.</span>
+    </div>
+
   </div>
 
-  <div class="feature">
-    <div class="icon">🤝</div>
-    <b>Meaningful Connections</b>
-    <span>Find friendship, romance and support.</span>
-  </div>
-
-  <div class="feature">
-    <div class="icon">🌱</div>
-    <b>A Healthier, Happier You</b>
-    <span>Share experiences and live life to the fullest.</span>
-  </div>
-
-  <div class="feature">
-    <div class="icon">💬</div>
-    <b>Real Conversations</b>
-    <span>Talk openly about life with T1D without explaining.</span>
-  </div>
-
-</div>
 </section>
-
-
-<section class="section" id="how">
-<div class="container">
-
-  <h2 class="section-title">How It Works</h2>
-  <p class="section-sub">
-    Simple, respectful and designed around real people.
-  </p>
-
-  <div class="steps">
-
-    <div class="step">
-      <div class="number">1</div>
-      <h3>Create Your Profile</h3>
-      <p>Tell us who you are and what kind of connection you are looking for.</p>
-    </div>
-
-    <div class="step">
-      <div class="number">2</div>
-      <h3>Discover People Who Get It</h3>
-      <p>Meet people who understand the everyday reality of T1D.</p>
-    </div>
-
-    <div class="step">
-      <div class="number">3</div>
-      <h3>Start a Real Conversation</h3>
-      <p>Connect, chat and see where the relationship goes.</p>
-    </div>
-
-  </div>
-</div>
-</section>
-
-
-<section class="why">
-<div class="container why-grid">
-
-  <div class="heart-scene">
-    <div class="hand left-hand"></div>
-    <div class="hand right-hand"></div>
-    <div class="heart-symbol">♡</div>
-    <div class="stronger">
-      Stronger<br>
-      Together ♥
-    </div>
-  </div>
-
-  <div>
-
-    <h2 class="section-title">Why T1D Match?</h2>
-
-    <p class="section-sub">
-      Because love is easier when you don't have to explain.
-    </p>
-
-    <div class="why-icons">
-
-      <div class="why-item">
-        <div class="icon">👥</div>
-        <b>Shared Experiences</b>
-        <span>You get it</span>
-      </div>
-
-      <div class="why-item">
-        <div class="icon">🛡️</div>
-        <b>More Comfort</b>
-        <span>Talk openly about T1D</span>
-      </div>
-
-      <div class="why-item">
-        <div class="icon">♥</div>
-        <b>Better Matches</b>
-        <span>People who understand your life</span>
-      </div>
-
-      <div class="why-item">
-        <div class="icon">★</div>
-        <b>A Brighter Future</b>
-        <span>Together we can make it happen</span>
-      </div>
-
-    </div>
-
-    <div style="text-align:center;margin-top:30px">
-      <a href="#join" class="btn btn-pink">
-        Join Today — It's Free →
-      </a>
-    </div>
-
-  </div>
-</div>
-</section>
-
 
 <section class="section" id="stories">
-<div class="container">
 
-  <h2 class="section-title">Success Stories</h2>
+  <div class="container">
 
-  <p class="section-sub">
-    The kind of connections T1D Match is designed to create.
-  </p>
+    <h2 class="section-title">
+      Success Stories
+    </h2>
 
-  <div class="stories">
+    <p class="section-sub">
+      A preview of the kind of community T1D Match is designed to create.
+    </p>
 
-    <div class="story">
-      <b>“Finally, someone who gets it.”</b>
-      <p>
-        Less explaining. More understanding.
-        More room for a real connection.
-      </p>
-    </div>
+    <div class="story-grid">
 
-    <div class="story">
-      <b>“It feels different.”</b>
-      <p>
-        Shared experience can make conversations
-        easier from the very first message.
-      </p>
-    </div>
+      <div class="story">
+        <b>“Finally, someone who gets it.”</b>
+        <p>
+          Less explaining. More understanding. More space for a real connection.
+        </p>
+      </div>
 
-    <div class="story">
-      <b>“Community first.”</b>
-      <p>
-        Friendship, support and meaningful
-        relationships can all start here.
-      </p>
+      <div class="story">
+        <b>“It feels different from a regular dating app.”</b>
+        <p>
+          Shared experience makes conversations easier from the very first message.
+        </p>
+      </div>
+
+      <div class="story">
+        <b>“Community first, dating second.”</b>
+        <p>
+          Friendship, support and meaningful relationships can all start here.
+        </p>
+      </div>
+
     </div>
 
   </div>
-</div>
+
 </section>
 
+<section class="section" id="how">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      How It Works
+    </h2>
+
+    <p class="section-sub">
+      Simple, respectful and designed around real people.
+    </p>
+
+    <div class="how-grid">
+
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Create Your Profile</h3>
+        <p>
+          Tell us who you are and what kind of connection you are looking for.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Discover People Who Get It</h3>
+        <p>
+          Meet people who understand the everyday reality of T1D.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Start a Real Conversation</h3>
+        <p>
+          Connect, chat and see where the relationship goes.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="why">
+
+  <div class="container why-grid">
+
+    <div class="hands">
+
+      <img
+        src="data:image/webp;base64,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"
+        alt="Hands making a heart at sunset"
+      >
+
+      <div class="script">
+        Stronger<br>
+        Together ♥
+      </div>
+
+    </div>
+
+    <div>
+
+      <h2 class="section-title">
+        Why T1D Match?
+      </h2>
+
+      <p class="section-sub">
+        Because love is easier when you don't have to explain.
+      </p>
+
+      <div class="why-icons">
+
+        <div class="why-item">
+          <div class="ic">👥</div>
+          <b>Shared Experiences</b>
+          <span>You get it</span>
+        </div>
+
+        <div class="why-item">
+          <div class="ic">🛡️</div>
+          <b>More Comfort</b>
+          <span>Talk openly about T1D</span>
+        </div>
+
+        <div class="why-item">
+          <div class="ic">♥</div>
+          <b>Better Matches</b>
+          <span>People who understand your life</span>
+        </div>
+
+        <div class="why-item">
+          <div class="ic">★</div>
+          <b>A Brighter Future</b>
+          <span>Together we can make it happen</span>
+        </div>
+
+      </div>
+
+      <a class="join-today" href="#join">
+        Join Today — It's Free →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
 <section class="section" id="faq">
-<div class="container faq">
 
-  <h2 class="section-title">FAQ</h2>
+  <div class="container faq">
 
-  <p class="section-sub">
-    A few things to know about T1D Match.
-  </p>
+    <h2 class="section-title">
+      FAQ
+    </h2>
 
-  <details>
-    <summary>Who is T1D Match for?</summary>
-    <p>
-      T1D Match is designed around adults living with
-      Type 1 Diabetes who want meaningful connections
-      with people who understand the T1D experience.
-    </p>
-  </details>
+    <details>
+      <summary>
+        Is T1D Match only for people with Type 1 Diabetes?
+      </summary>
 
-  <details>
-    <summary>Is T1D Match a medical service?</summary>
-    <p>
-      No. T1D Match is a dating and community concept,
-      not a medical service.
-    </p>
-  </details>
+      <p>
+        The concept is centered on people living with T1D and the shared understanding that comes with it.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        Is this a medical service?
+      </summary>
+
+      <p>
+        No. T1D Match is a dating and community concept, not a medical service.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        Is joining free?
+      </summary>
+
+      <p>
+        The MVP is designed around free early access while we validate demand and build the community.
+      </p>
+    </details>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="container foot">
+
+    <div class="logo">
+      <span class="logo-mark">♥</span>
+
+      <span>
+        T1D Match
+        <small>Same Journey. Brighter Together.</small>
+      </span>
+    </div>
+
+    <div>
+      About &nbsp; | &nbsp;
+      Privacy &nbsp; | &nbsp;
+      Terms &nbsp; | &nbsp;
+      Contact
+    </div>
+
+    <div>
+      © 2026 T1D Match
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+
+/*
+  IMPORTANT:
+  Paste ONLY your Supabase Publishable Key below.
+  Do not use the Secret key.
+*/
+
+const SUPABASE_URL =
+  "https://hzvyzgmooazhlhvbkey.supabase.co";
+
+const SUPABASE_KEY =
+
+  "sb_publishable_XXXXXXXXXXXXXXXXXXXXXXXX";
+
+
+function calculateAge(value){
+
+  const dob =
+    new Date(value + "T00:00:00");
+
+  const now =
+    new Date();
+
+  let age =
+    now.getFullYear() - dob.getFullYear();
+
+  const month =
+    now.getMonth() - dob.getMonth();
+
+  if(
+    month < 0 ||
+    (
+      month === 0 &&
+      now.getDate() < dob.getDate()
+    )
+  ){
+    age--;
+  }
+
+  return age;
+}
+
+
+const form =
+  document.getElementById("signupForm");
+
+const button =
+  document.getElementById("joinButton");
+
+const statusBox =
+  document.getElementById("formStatus");
+
+
+function showStatus(message,type){
+
+  statusBox.textContent =
+    message;
+
+  statusBox.className =
+    "status " + type;
+}
+
+
+form.addEventListener(
+  "submit",
+  async function(event){
+
+    event.preventDefault();
+
+    const name =
+      document
+      .getElementById("fullName")
+      .value
+      .trim();
+
+    const email =
+      document
+      .getElementById("email")
+      .value
+      .trim()
+      .toLowerCase();
+
+    const dob =
+      document
+      .getElementById("dob")
+      .value;
+
+    const age =
+      calculateAge(dob);
+
+
+    if(age < 18){
+
+      showStatus(
+        "T1D Match is for adults 18+ only.",
+        "err"
+      );
+
+      return;
+    }
+
+
+    if(
+      SUPABASE_KEY ===
+      "PASTE_YOUR_EXACT_PUBLISHABLE_KEY_HERE"
+    ){
+
+      showStatus(
+        "Paste your Supabase Publishable Key into the SUPABASE_KEY line first.",
+        "err"
+      );
+
+      return;
+    }
+
+
+    button.disabled =
+      true;
+
+    button.textContent =
+      "Joining...";
+
+    statusBox.className =
+      "status";
+
+
+    try{
+
+      const response =
+        await fetch(
+          SUPABASE_URL +
+          "/rest/v1/users",
+          {
+
+            method:"POST",
+
+            headers:{
+
+              "apikey":
+                SUPABASE_KEY,
+
+              "Authorization":
+                "Bearer " +
+                SUPABASE_KEY,
+
+              "Content-Type":
+                "application/json",
+
+              "Prefer":
+                "return=minimal"
+            },
+
+            body:
+              JSON.stringify({
+
+                name:name,
+
+                email:email,
+
+                age:age
+              })
+          }
+        );
+
+
+      if(!response.ok){
+
+        const details =
+          await response.text();
+
+        throw new Error(
+          details ||
+          "Supabase insert failed."
+        );
+      }
+
+
+      form.reset();
+
+      showStatus(
+        "Success! Your T1D Match registration was saved.",
+        "ok"
+      );
+
+    }
+    catch(error){
+
+      console.error(error);
+
+      showStatus(
+        "The page is working, but Supabase blocked the save. Enable an INSERT policy for the users table and try again.",
+        "err"
+      );
+    }
+    finally{
+
+      button.disabled =
+        false;
+
+      button.textContent =
+        "Join T1D Match →";
+    }
+  }
+);
+
+</script>
+
+</body>
+</html>
